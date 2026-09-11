@@ -28,5 +28,9 @@ const router = createBrowserRouter([
             }
         ]
     }
-])
+],
+    {
+        basename: "/Jamr-restaurant"
+    }
+)
 export default router;
