@@ -1,7 +1,7 @@
 // short show of the main menue
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 import { useState } from "react";
-import DishCard from "../../ui/DishCard/DishCard";
+import DishCard from "../../UI/DishCard/DishCard";
 
 function Menu() {
     const [activeCategory,setActiveCategory]=useState("All");

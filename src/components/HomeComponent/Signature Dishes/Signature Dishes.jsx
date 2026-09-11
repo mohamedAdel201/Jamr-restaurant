@@ -1,6 +1,6 @@
 // the famouse dishes in the restaurant
 import { Link } from "react-router-dom";
-import DishCard from "../../ui/DishCard/DishCard";
+import DishCard from "../../UI/DishCard/DishCard";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 function SignatureDishes() {
