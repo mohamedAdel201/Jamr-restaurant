@@ -1,0 +1,21 @@
+@import "tailwindcss";
+:root{ 
+  --color-bg: #171310;
+  --color-bg-secondary: #211a15;
+  --color-primary: #c83a24;
+  --color-primary-hover: #a92e1c;
+  --color-accent: #d6a756;
+  --color-text: #f7f0e6;
+  --color-text-muted: #c8b9a5;
+  --color-border: #3a3028;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+ 
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+}
