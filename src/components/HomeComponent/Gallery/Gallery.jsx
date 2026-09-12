@@ -5,32 +5,32 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      image: "/dishes/Gallery/aboutGriild.webp",
+      image: `${import.meta.env.BASE_URL}dishes/Gallery/aboutGriild.webp`,
       alt: "Grilled chicken",
     },
     {
       id: 2,
-      image: "/dishes/Gallery/kofta.webp",
+      image: `${import.meta.env.BASE_URL}dishes/Gallery/kofta.webp`,
       alt: "Egyptian kofta",
     },
     {
       id: 3,
-      image: "/dishes/Gallery/hawawshy.webp",
+      image: `${import.meta.env.BASE_URL}dishes/Gallery/hawawshy.webp`,
       alt: "Egyptian hawawshi",
     },
     {
       id: 4,
-      image: "/dishes/Gallery/specialOffer.webp",
+      image: `${import.meta.env.BASE_URL}dishes/Gallery/specialOffer.webp`,
       alt: "Grilled chicken skewers",
     },
     {
       id: 5,
-      image: "/dishes/Gallery/meat.webp",
+      image: `${import.meta.env.BASE_URL}dishes/Gallery/meat.webp`,
       alt: "Grilled meat pieces",
     },
     {
       id: 6,
-      image: "/dishes/Gallery/aCichen.webp",
+      image: `${import.meta.env.BASE_URL}dishes/Gallery/aCichen.webp`,
       alt: "Egyptian grilled food",
     },
   ];

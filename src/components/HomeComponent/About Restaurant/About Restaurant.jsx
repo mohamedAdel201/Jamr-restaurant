@@ -12,7 +12,7 @@ const About = () => {
             {/* Image */}
             <div className="overflow-hidden rounded-2xl">
               <img
-                src="/dishes/Griled/aboutGriild.webp"
+                  src={`${import.meta.env.BASE_URL}dishes/Griled/aboutGriild.webp`}
                 alt="Grilled chicken skewers"
                 className="h-full min-h-[400px] w-full object-cover"
               />

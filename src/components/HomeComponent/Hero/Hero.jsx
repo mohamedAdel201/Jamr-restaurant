@@ -6,7 +6,7 @@ function Hero() {
         <section className="relative overflow-hidden bg-[var(--color-bg)]">
             <div className="absolute inset-0 md:hidden">
                 <img
-                    src="/chiken.webp"
+                    src={`${import.meta.env.BASE_URL}chiken.webp`}
                     alt=""
                     className="h-full w-full object-cover"
                     fetchPriority="high" />
@@ -65,7 +65,7 @@ function Hero() {
 
                         <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)]">
                             <img
-                                src="/chiken.webp"
+                                src={`${import.meta.env.BASE_URL}chiken.webp`} 
                                 alt="Egyptian grilled dish"
                                 className="h-[350px] w-full object-cover sm:h-[450px] lg:h-[550px]"
                                 fetchPriority="high" />

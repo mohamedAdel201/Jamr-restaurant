@@ -7,27 +7,26 @@ function SignatureDishes() {
     const dishes = [
         {
             id: 1,
-            image: "/dishes/chkens.webp",
-            name: "Grilled Chicken",
+            image: `${import.meta.env.BASE_URL}dishes/chkens.webp`,            name: "Grilled Chicken",
             description: "Juicy Egyptian-style grilled chicken with aromatic spices.",
             price: "18",
         },
         {
             id: 2,
-            image: "/dishes/kofta.webp",
+            image: `${import.meta.env.BASE_URL}dishes/kofta.webp`,
             name: "Egyptian Kofta",
             description: "Tender grilled kofta seasoned with our signature spices.",
             price: "15",
         },
         {
             id: 3,
-            image: "/dishes/hawawshy.webp",
+            image: `${import.meta.env.BASE_URL}dishes/hawawshy.webp`,
             name: "Hawawshi",
             description: "Crispy Egyptian flatbread filled with seasoned minced meat.",
             price: "12",
         },
     ];
-
+    
     return (
         <section className="bg-[var(--color-bg-secondary)] px-4 py-20 sm:px-6 lg:px-8">
            

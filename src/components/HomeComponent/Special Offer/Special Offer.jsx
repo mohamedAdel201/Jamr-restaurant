@@ -12,9 +12,9 @@ const SpecialOffer = () => {
           {/* Image */}
           <div
             className="min-h-[320px] bg-cover bg-center bg-no-repeat sm:min-h-[420px] lg:min-h-[520px]"
-            style={{
-              backgroundImage: "url('/dishes/Griled/specialOffer.webp')",
-            }}
+             style={{
+              backgroundImage: `url('${import.meta.env.BASE_URL}dishes/Griled/specialOffer.webp')`,
+                }}
           />
 
           {/* Content */}

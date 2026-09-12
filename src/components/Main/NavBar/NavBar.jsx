@@ -14,7 +14,7 @@ function NavBar() {
                     className="flex items-center gap-3"
                 >
                     <img
-                        src="/icon.png"
+                        src={`${import.meta.env.BASE_URL}icon.png`}
                         alt="JAMR"
                         className="h-10 w-10 object-contain"
                     />

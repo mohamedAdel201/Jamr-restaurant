@@ -8,7 +8,7 @@ function Menu() {
     const dishes=[
         {
             id: 1,
-            image: "/dishes/chkens.webp",
+            image: `${import.meta.env.BASE_URL}dishes/chkens.webp`,
             name: "Grilled Chicken",
             category:"Chicken",
             description: "Juicy Egyptian-style grilled chicken with aromatic spices.",
@@ -16,7 +16,7 @@ function Menu() {
         },
         {
             id: 2,
-            image: "/dishes/kofta.webp",
+            image: `${import.meta.env.BASE_URL}dishes/kofta.webp`,
             name: "Egyptian Kofta",
             category:"Grills",
             description: "Tender grilled kofta seasoned with our signature spices.",
@@ -24,7 +24,7 @@ function Menu() {
         },
         {
             id: 3,
-            image: "/dishes/Griled/griiledChicken.webp",
+            image: `${import.meta.env.BASE_URL}dishes/Griled/griiledChicken.webp`,
             name: "Chicken",
             category:"Grills",
             description: "Juicy grilled chicken marinated with aromatic Egyptian spices",
@@ -32,7 +32,7 @@ function Menu() {
         },
         {
             id: 4,
-            image: "/dishes/Griled/meat.webp",
+            image: `${import.meta.env.BASE_URL}dishes/Griled/meat.webp`,
             name: "Meat",
             category:"Grills",
             description: "Tender grilled meat seasoned with rich Egyptian spices",
@@ -40,23 +40,23 @@ function Menu() {
         },
         {
             id: 5,
-            image: "/dishes/hawawshy.webp",
+            image: `${import.meta.env.BASE_URL}dishes/hawawshy.webp`,
             name: "Egyptian",
             category:"Egyptian",
             description: "Crispy Egyptian flatbread filled with seasoned minced meat.",
             price: "12",
         },
-         {
+        {
             id: 6,
-            image: "/dishes/Griled/griiledChicken.webp",
+            image: `${import.meta.env.BASE_URL}dishes/Griled/griiledChicken.webp`,
             name: "Chiken",
             category:"Chicken",
             description: "Juicy grilled chicken marinated with aromatic Egyptian spices",
             price: "15",
         },
-         {
+        {
             id: 7,
-            image: "/dishes/soup/soup.webp",
+            image: `${import.meta.env.BASE_URL}dishes/soup/soup.webp`,
             name: "Soups",
             category:"Soups",
             description: "Warm Egyptian lentil soup with aromatic spices",
@@ -64,29 +64,29 @@ function Menu() {
         },
         {
             id: 8,
-            image: "/dishes/soup/mlokya.webp",
+            image: `${import.meta.env.BASE_URL}dishes/soup/mlokya.webp`,
             name: "Molokhia",
             category:"Soups",
             description: "Classic Egyptian molokhia with garlic and herbs",
             price: "5",
         },
-         {
+        {
             id: 9,
-            image: "/dishes/sides/rice.webp",
+            image: `${import.meta.env.BASE_URL}dishes/sides/rice.webp`,
             name: "Rice",
             category:"Sides",
             description: "Fluffy Egyptian rice seasoned with aromatic spices",
             price: "5",
         },
-         {
+        {
             id: 10,
-            image: "/dishes/sides/tahena.webp",
+            image: `${import.meta.env.BASE_URL}dishes/sides/tahena.webp`,
             name: "Tahini",
             category:"Sides",
             description: "Creamy tahini sauce with a rich, nutty flavor",
             price: "2",
         },
-   
+        
     ]
     const filteredDishes  = dishes.filter((dish)=>{
         return activeCategory ==="All"  || dish.category === activeCategory;
