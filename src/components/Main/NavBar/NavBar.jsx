@@ -100,29 +100,29 @@ function NavBar() {
                             Home
                         </Link>
 
-                        <Link
-                            to="/menue"
+                        <a
+                            href="#menu"
                             onClick={() => setIsMenuOpen(false)}
                             className="border-b border-[var(--color-border)] py-3 text-sm font-medium text-[var(--color-text)]"
                         >
                             Menu
-                        </Link>
+                        </a>
 
-                        <Link
-                            to="/about"
+                        <a
+                            href="#about"
                             onClick={() => setIsMenuOpen(false)}
                             className="border-b border-[var(--color-border)] py-3 text-sm font-medium text-[var(--color-text)]"
                         >
                             About
-                        </Link>
+                        </a>
 
-                        <Link
-                            to="/contactUs"
+                        <a
+                             href="#contact"
                             onClick={() => setIsMenuOpen(false)}
                             className="py-3 text-sm font-medium text-[var(--color-text)]"
                         >
                             Contact
-                        </Link>
+                        </a>
 
                         <a
                             href="#contact"
