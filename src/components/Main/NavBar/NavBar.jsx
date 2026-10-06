@@ -1,143 +1,116 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-function NavBar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "#about" },
+  { name: "Projects", path: "#projects" },
+  { name: "Contact", path: "#contact" },
+];
 
-    return (
-        <header className="relative w-full border-b border-[var(--color-border)] bg-[var(--color-bg)]">
-            <nav className=" mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
+const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-                {/* Logo */}
-                <Link
-                    to="/"
-                    className="flex items-center gap-3"
-                >
-                    <img
-                        src={`${import.meta.env.BASE_URL}icon.png`}
-                        alt="JAMR"
-                        className="h-10 w-10 object-contain"
-                    />
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle("light");
+    setIsDarkMode((prev) => !prev);
+  };
 
-                    <span className="text-xl font-bold tracking-wide text-[var(--color-text)]">
-                        JAMR
-                    </span>
-                </Link>
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
+const getNavLinkClass = ({ isActive }) =>
+  `relative text-sm font-medium transition-colors duration-300
+  after:absolute after:-bottom-2 after:left-0 after:h-0.5
+  after:bg-[var(--primary)] after:transition-all after:duration-300
+  ${
+    isActive
+      ? "text-[var(--primary)] after:w-full"
+      : "text-[var(--text-secondary)] after:w-0 hover:text-[var(--primary)] hover:after:w-full"
+  }`;
+  
+  return (
+    <header className="relative sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur">      <nav className="mx-auto flex min-h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <a
+            href="#home"
+            className="text-xl font-bold text-[var(--text-primary)]"
+            >
+            Dege<span className="text-[var(--primary)]">Tag</span>
+        </a>
 
-                {/* Desktop Navigation */}
-                <div className="hidden items-center gap-8 md:flex">
+        {/* Desktop Navigation */}
+        <div className="hidden items-center gap-8 md:flex">
+          {navLinks.map((link) => (
+            <a 
+              key={link.path}
+              href={link.path}
+              className={getNavLinkClass(link)}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
 
-                    <Link
-                        to="/"
-                        className="text-sm font-medium text-[var(--color-text)] transition hover:text-[var(--color-accent)]"
-                    >
-                        Home
-                    </Link>
+        {/* Desktop Dark Mode */}
+        <button
+          type="button"
+          onClick={toggleDarkMode}
+          aria-label="Toggle dark mode"
+          className="hidden rounded-lg p-2 text-text-secondary transition-colors hover:bg-background-secondary hover:text-text-primary md:block"
+        >
+          {isDarkMode ? <Sun size={19} /> : <Moon size={19} />}
+        </button>
 
-                    <a
-                        href="#menu"
-                        className="text-sm font-medium text-[var(--color-text-muted)] transition hover:text-[var(--color-accent)]"
-                    >
-                        Menu
-                    </a>
+        {/* Mobile Actions */}
+        <div className="flex items-center gap-1 md:hidden">
 
-                    <a
-                        href="#about"
-                        className="text-sm font-medium text-[var(--color-text-muted)] transition hover:text-[var(--color-accent)]"
-                    >
-                        About
-                    </a>
+          <button
+            type="button"
+            onClick={toggleDarkMode}
+            aria-label="Toggle dark mode"
+            className="rounded-lg p-2 text-text-secondary transition-colors hover:bg-background-secondary hover:text-text-primary"
+          >
+            {isDarkMode ? <Sun size={19} /> : <Moon size={19} />}
+          </button>
 
-                    <a
-                        href="#contact"
-                        className="text-sm font-medium text-[var(--color-text-muted)] transition hover:text-[var(--color-accent)]"
-                    >
-                        Contact
-                    </a>
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            className="rounded-lg p-2 text-text-secondary transition-colors hover:bg-background-secondary hover:text-text-primary"
+          >
+            {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
+          </button>
 
-                </div>
+        </div>
+      </nav>
 
-
-                {/* Desktop CTA */}
-                <div className="hidden md:block">
-                    <a
-                        href="#contact"
-                        className="rounded-full bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--color-primary-hover)]"
-                    >
-                        Reserve a Table
-                    </a>
-                </div>
-
-
-                {/* Mobile Menu Button */}
-                <button
-                    type="button"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-text)] md:hidden"
-                    aria-label="Toggle menu"
-                    aria-expanded={isMenuOpen}
-                >
-                    <span className="text-xl">
-                        {isMenuOpen ? "×" : "☰"}
-                    </span>
-                </button>
-
-            </nav>
-
-
-            {/* Mobile Navigation */}
-            {isMenuOpen && (
-                <div className=" absolute top-full z-50 left-0 w-full border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)] md:hidden">
-
-                    <div className="mx-auto flex max-w-7xl flex-col px-4 py-4">
-
-                        <Link
-                            to="/"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="border-b border-[var(--color-border)] py-3 text-sm font-medium text-[var(--color-text)]"
-                        >
-                            Home
-                        </Link>
-
-                        <a
-                            href="#menu"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="border-b border-[var(--color-border)] py-3 text-sm font-medium text-[var(--color-text)]"
-                        >
-                            Menu
-                        </a>
-
-                        <a
-                            href="#about"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="border-b border-[var(--color-border)] py-3 text-sm font-medium text-[var(--color-text)]"
-                        >
-                            About
-                        </a>
-
-                        <a
-                             href="#contact"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="py-3 text-sm font-medium text-[var(--color-text)]"
-                        >
-                            Contact
-                        </a>
-
-                        <a
-                            href="#contact"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="mt-4 rounded-full bg-[var(--color-primary)] px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--color-primary-hover)]"
-                        >
-                            Reserve a Table
-                        </a>
-
-                    </div>
-
-                </div>
-            )}
-        </header>
-    );
-}
+      {/* Mobile Navigation */}
+{isMenuOpen && (
+  <div className="absolute left-0 top-full w-full border-b border-[var(--border)] bg-[var(--background)]/80 shadow-xl backdrop-blur-xl md:hidden">
+    <div className="mx-auto max-w-6xl px-6 py-4">
+      <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/70 p-2 backdrop-blur-md">
+        {navLinks.map((link) => (
+          <a
+            key={link.path}
+            href={link.path}
+            onClick={() => setIsMenuOpen(false)}
+            className="block rounded-xl px-4 py-3 text-sm font-medium text-[var(--text-secondary)] transition-all duration-200 hover:bg-[var(--background-secondary)] hover:text-[var(--primary)]"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+    </header>
+  );
+};
 
 export default NavBar;

@@ -1,21 +1,129 @@
 @import "tailwindcss";
-:root{ 
-  --color-bg: #171310;
-  --color-bg-secondary: #211a15;
-  --color-primary: #c83a24;
-  --color-primary-hover: #a92e1c;
-  --color-accent: #d6a756;
-  --color-text: #f7f0e6;
-  --color-text-muted: #c8b9a5;
-  --color-border: #3a3028;
+
+:root {
+  --background: #0b1120;
+  --background-secondary: #111827;
+  --surface: #172033;
+
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  --border: #273449;
+  --accent: #2dd4bf;
+  
 }
+
+.light {
+  
+  --background: #f8fafc;
+  --background-secondary: #f1f5f9;
+  --surface: #ffffff;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  --border: #e2e8f0;
+  --accent: #14b8a6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
-* {
- 
-  box-sizing: border-box;
-}
+
 body {
-  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: Inter, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+@keyframes heroContent {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroImage {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.hero-content {
+  animation: heroContent 1s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.hero-image {
+  animation: heroImage 0.9s ease-out 0.15s both;
+}
+.hero-actions {
+  animation: heroActions 0.5s ease-out 0.2s both;
+}
+
+@keyframes heroActions {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-social {
+  animation: heroSocial 0.5s ease-out 0.3s both;
+}
+
+@keyframes heroSocial {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-image > div:last-child {
+  animation: heroFloat 4s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }

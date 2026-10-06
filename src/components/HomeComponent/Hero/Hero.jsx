@@ -1,84 +1,111 @@
-// first thing the client see it
+import profileImage from "../../../assets/images/profile_Img.png"
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import {  FaFacebookF,
+  FaGithub,
+  FaLinkedinIn,
+  FaYoutube, } from "react-icons/fa";
+const Hero = () => {
+  return (
+    <section className="flex min-h-[calc(100vh-4rem)] items-center bg-[var(--background)]">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-16 md:grid-cols-2 md:items-center">
+        {/* Content */}
+        <div className="hero-content">
+          <p className="mb-4 text-sm font-medium uppercase tracking-wider text-[var(--primary)]">
+            Front-End Developer
+          </p>
 
-function Hero() {
-    return (
-        <section className="relative overflow-hidden bg-[var(--color-bg)]">
-            <div className="absolute inset-0 md:hidden">
-                <img
-                    src={`${import.meta.env.BASE_URL}chiken.webp`}
-                    alt=""
-                    className="h-full w-full object-cover"
-                    fetchPriority="high" />
+          <h1 className="text-4xl font-bold leading-tight text-[var(--text-primary)] md:text-6xl">
+            Building modern
+            <span className="block text-[var(--primary)]">
+              web experiences.
+            </span>
+          </h1>
 
-                <div className="absolute inset-0 bg-black/60"></div>
-            </div>
-            <div className="mx-auto flex min-h-[calc(100vh-73px)] max-w-7xl items-center px-4 py-6 sm:px-6 lg:px-8">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--text-secondary)]">
+            I build responsive, user-friendly websites and web applications
+            using modern front-end technologies.
+          </p>
 
-                <div className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Actions */}
+          <div className="hero-actions mt-8 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-6 py-3 font-medium text-white transition hover:bg-[var(--primary-hover)]"
+            >
+              View My Work
+              <ArrowRight size={18} />
+            </a>
 
-                    {/* Content */}
-                    <div className="text-center lg:text-start relative z-10">
+            <a
+              href="#contact"
+              className="rounded-lg border border-[var(--border)] px-6 py-3 font-medium text-[var(--text-primary)] transition hover:bg-[var(--background-secondary)]"
+            >
+              Contact Me
+            </a>
+          </div>
 
-                        <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)] sm:text-base">
-                            Modern Egyptian Grill
-                        </span>
+        {/* Social Links */}
+        <div className="hero-social mt-8 flex items-center gap-4">
+        <a
+            href="https://github.com/mohamedAdel201"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="text-[var(--text-secondary)] transition hover:text-[var(--primary)]"
+        >
+            <FaGithub size={22} />
+        </a>
 
-                        <h1 className="text-3xl md:text-4xl font-extrabold leading-tight text-[var(--color-text)] sm:text-5xl lg:text-6xl">
-                            Authentic Egyptian
-                            <span className="block text-[var(--color-primary)]">
-                                Taste, Modern Soul
-                            </span>
-                        </h1>
+        <a
+            href="YOUR_LINKEDIN_URL"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="text-[var(--text-secondary)] transition hover:text-[var(--primary)]"
+        >
+            <FaLinkedinIn size={22} />
+        </a>
 
-                        <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-[var(--color-text-muted)] sm:text-lg lg:mx-0">
-                            Discover the rich flavors of Egyptian cuisine,
-                            freshly grilled and served with a modern touch.
-                        </p>
+        <a
+            href="https://www.youtube.com/@DegeTag"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="YouTube"
+            className="text-[var(--text-secondary)] transition hover:text-[var(--primary)]"
+        >
+            <FaYoutube size={22} />
+        </a>
 
-                        {/* Buttons */}
-                        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+        <a
+            href="https://web.facebook.com/profile.php?id=61568395748953&locale=ar_AR"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+            className="text-[var(--text-secondary)] transition hover:text-[var(--primary)]"
+        >
+            <FaFacebookF size={22} />
+        </a>
+        </div>
+        </div>
 
-                            <a
-                                href="#menu"
-                                className="rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--color-primary-hover)]"
-                            >
-                                Explore Menu
-                            </a>
+        {/* Visual */}
+<div className="hero-image flex justify-center md:justify-end">
+  <div className="relative">
+    <div className="absolute inset-0 -z-10  rounded-3xl bg-[var(--primary)]/20 blur-3xl" />
 
-                            <a
-                                href="#contact"
-                                className="rounded-full border border-[var(--color-accent)] px-7 py-3.5 text-sm font-semibold text-[var(--color-accent)] transition hover:bg-[var(--color-accent)] hover:text-[var(--color-bg)]"
-                            >
-                                Reserve a Table
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    {/* Image */}
-                    <div className=" relative mx-auto hidden w-full max-w-xl lg:max-w-none md:block">
-
-                        <div className="absolute -inset-4 rounded-full bg-[var(--color-primary)]/10 blur-3xl"></div>
-
-                        <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)]">
-                            <img
-                                src={`${import.meta.env.BASE_URL}chiken.webp`} 
-                                alt="Egyptian grilled dish"
-                                className="h-[350px] w-full object-cover sm:h-[450px] lg:h-[550px]"
-                                fetchPriority="high" />
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-    );
-}
+    <div className="h-[420px] w-[320px] overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-xl md:h-[520px] md:w-[400px]">
+      <img
+        src={profileImage}
+        alt="Mohamed Adel"
+        className="h-full w-full object-cover object-center"
+      />
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
-
